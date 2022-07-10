@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/amlogic/g12-common
+COMMON_PATH := device/hardkernel/odroid-common
 
 ## BUILD_BROKEN_*
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -16,10 +16,9 @@ TARGET_AMLOGIC_GPU_ARCH := bifrost
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 
 ## Kernel
-BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.boot_devices=ffe07000.emmc use_uvm=1
-TARGET_KERNEL_CONFIG := g12a_defconfig
-TARGET_KERNEL_SOURCE := kernel/amlogic/linux-4.9
-TARGET_KERNEL_VARIANT_CONFIG ?= g12a_variant_defconfig
+TARGET_KERNEL_CLANG_COMPILE := false
+TARGET_KERNEL_CONFIG := meson64_defconfig
+TARGET_KERNEL_SOURCE := kernel/amlogic/linux-4.9-pie
 
 ## Partitions
 CORE_PARTITIONS := system vendor
@@ -57,4 +56,4 @@ VENDOR_SECURITY_PATCH := 2021-11-05
 include device/amlogic/common/BoardConfigAmlogic.mk
 
 ## Include the common proprietary BoardConfig makefile
-include vendor/amlogic/g12-common/BoardConfigVendor.mk
+include vendor/hardkernel/odroid-common/BoardConfigVendor.mk

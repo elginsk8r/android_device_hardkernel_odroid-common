@@ -131,4 +131,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/amlogic/common/amlogic.mk)
 
 ## Inherit from the common proprietary files makefile
-$(call inherit-product, vendor/amlogic/g12-common/g12-common-vendor.mk)
+$(call inherit-product, vendor/hardkernel/odroid-common/odroid-common-vendor.mk)
