@@ -60,16 +60,47 @@ fi
 
 function blob_fixup() {
      case "${1}" in
-        vendor/etc/init/fs.rc)
-             sed -i '/media 0770 media_rw media_rw/d' "${2}"
-             sed -i '/setprop ro.crypto.fuse_sdcard true/d' "${2}"
-             ;;
-        vendor/etc/init/tee-supplicant.rc)
-             sed -i s#/vendor/lib/#/vendor/lib/modules/#g "${2}"
-             ;;
         vendor/etc/wifi/wpa_supplicant_overlay.conf)
-             echo "driver_param=use_p2p_group_interface=1">>"${2}"
-             ;;
+            echo "driver_param=use_p2p_group_interface=1">>"${2}"
+            ;;
+        vendor/lib/libOmxVideo.so)
+            "${PATCHELF}" --add-needed "libaml_symbols.so" "${2}"
+            ;;
+        vendor/lib/libOmxBase.so)
+            "${PATCHELF}" --add-needed "libaml_symbols.so" "${2}"
+            ;;
+        vendor/lib/libOmxCoreSw.so)
+            "${PATCHELF}" --add-needed "libstagefright_softomx.so" "${2}"
+            ;;
+        vendor/lib/hw/audio.primary.amlogic.so)
+            "${PATCHELF}" --set-soname "audio.primary.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/camera.amlogic.so)
+            "${PATCHELF}" --set-soname "camera.amlogic.so" "${2}"
+            "${PATCHELF}" --add-needed "libaml_symbols.so" "${2}"
+            ;;
+        vendor/lib/hw/gatekeeper.amlogic.so)
+            "${PATCHELF}" --set-soname "gatekeeper.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/gralloc.amlogic.so)
+            "${PATCHELF}" --set-soname "gralloc.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/hwcomposer.amlogic.so)
+            "${PATCHELF}" --set-soname "hwcomposer.amlogic.so" "${2}"
+            "${PATCHELF}" --add-needed "libaml_symbols.so" "${2}"
+            ;;
+        vendor/lib/hw/hdmi_cec.amlogic.so)
+            "${PATCHELF}" --set-soname "hdmi_cec.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/memtrack.amlogic.so)
+            "${PATCHELF}" --set-soname "memtrack.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/power.amlogic.so)
+            "${PATCHELF}" --set-soname "power.amlogic.so" "${2}"
+            ;;
+        vendor/lib/hw/thermal.amlogic.so)
+            "${PATCHELF}" --set-soname "thermal.amlogic.so" "${2}"
+            ;;
      esac
  }
 
@@ -78,7 +109,6 @@ if [ -z "${ONLY_TARGET}" ]; then
     setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-    extract "${MY_DIR}/proprietary-files-tee.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../../${VENDOR_DEVICE}/${DEVICE}/proprietary-files.txt" ]; then

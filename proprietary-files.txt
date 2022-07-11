@@ -1,51 +1,24 @@
 ### All blobs from this list, unless pinned and noted as otherwise,
-##  are from adt3-user 12 STT1.211025.001.Z4 7928920 release-keys.
-
-# ATV Specific
-product/etc/permissions/privapp-permissions-atv-product.xml
-product/etc/permissions/privapp-permissions-google-p.xml
-product/etc/permissions/split-permissions-google.xml
-product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
-product/etc/sysconfig/google.xml:product/etc/sysconfig/google-lineage.xml
-product/etc/sysconfig/google_atv.xml
--product/priv-app/DfuService/DfuService.apk
--product/priv-app/Adt3LauncherCustomization/Adt3LauncherCustomization.apk
--product/priv-app/Adt3SuwCustomization/Adt3SuwCustomization.apk
-system/etc/permissions/privapp-permissions-google.xml
-system_ext/bin/blur_sysprop_notifier
-system_ext/etc/init/blur_sysprop_notifier.rc
-system_ext/etc/permissions/privapp-permissions-deadpool.xml
-system_ext/etc/permissions/privapp-permissions-google-se.xml
--system_ext/priv-app/DeadpoolServiceBtServices/DeadpoolServiceBtServices.apk
+##  are from kvim-userdebug 9 PPR1.180610.011 20211022 test-keys.
 
 # Audio
-system_ext/bin/param_set
-vendor/lib/hw/audio.primary.amlogic.so
-vendor/lib/libAmlAudioOutPort.so
+vendor/etc/audio_effects.conf
+vendor/lib/hw/audio.primary.odroidn2.so:vendor/lib/hw/audio.primary.amlogic.so
+vendor/lib/libam_adp.so
 vendor/lib/libamadec.so
 vendor/lib/libamaudioutils.so
-vendor/lib/libamladecs.so
-vendor/lib/libamlaudiohal.so
-vendor/lib/libamlaudiohal@7.0.so
-vendor/lib/libamlaudiohal_deathhandler.so
+vendor/lib/libamavutils.so
 vendor/lib/libamlaudiorc.so
-vendor/lib/libamlmediautils.so
-vendor/lib/libamlparser.so
-vendor/lib/libamlresampler.so
-vendor/lib/libamlspeed.so
-vendor/lib/libamltinyalsa.so
-vendor/lib/libdvbaudioutils.so
-vendor/lib/libfaad.so
-vendor/lib/libmad.so
-vendor/lib/libms12api_v24.so
+vendor/lib/libdroidaudiospdif.so
+vendor/lib/libicuuc_vendor.so
+vendor/lib/libms12api.so
 vendor/lib/libnano.so
-vendor/lib/libsonic_ext.so
 
 # Audio Effects
-vendor/etc/audio_effects.conf
 vendor/lib/soundfx/libavl.so
 vendor/lib/soundfx/libbalance.so
 vendor/lib/soundfx/libdbx.so
+vendor/lib/soundfx/libgeq.so
 vendor/lib/soundfx/libhpeqwrapper.so
 vendor/lib/soundfx/libms12dapwrapper.so
 vendor/lib/soundfx/libsrswrapper.so
@@ -53,222 +26,110 @@ vendor/lib/soundfx/libtreblebasswrapper.so
 vendor/lib/soundfx/libvirtualsurround.so
 vendor/lib/soundfx/libvirtualx.so
 
-# Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-droidlogic
-vendor/etc/bluetooth/auto_pairing.conf
-vendor/etc/bluetooth/blacklist.conf
-vendor/etc/bluetooth/bt_vendor.conf
-vendor/etc/bluetooth/bt_vendor_usb.conf
-vendor/etc/init/android.hardware.bluetooth@1.0-service-droidlogic.rc
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-droidlogic.so
-
 # Camera
-vendor/lib/hw/camera.amlogic.so
-vendor/lib/libispaaa.so
+vendor/lib/hw/camera.odroidn2.so:vendor/lib/hw/camera.amlogic.so
+#vendor/lib/libispaaa.so
 
-# Cgroups
-vendor/etc/cgroups.json
-vendor/etc/task_profiles.json
+# Gatekeeper
+vendor/lib/hw/gatekeeper.odroidn2.so:vendor/lib/hw/gatekeeper.amlogic.so
 
-# Common
-vendor/bin/ddrtest.sh
-vendor/etc/lowmemorykiller.txt
-vendor/etc/lowmemorykiller_2G.txt
-vendor/etc/lowmemorykiller_512M.txt
-vendor/etc/permissions/android.software.cant_save_state.xml
-
-# Composer
--vendor/etc/vintf/manifest/android.hardware.graphics.composer@2.4-service.droidlogic.xml
-vendor/bin/hw/android.hardware.graphics.composer@2.4-service.droidlogic
-vendor/etc/init/android.hardware.graphics.composer@2.4-service.droidlogic.rc
-vendor/lib/android.hardware.graphics.composer@2.1-resources-vendor.so
-vendor/lib/android.hardware.graphics.composer@2.2-resources-vendor.so
-vendor/lib/hw/hwcomposer.amlogic.so
-vendor/lib/libmeson_display_adapter_remote.so
-vendor/lib/libmeson_display_service.so
-vendor/lib/libvideotunnel.so
-vendor/lib/vendor.amlogic.display.meson_display_ipc@1.0.so
-
-# Droidlogic
--system_ext/priv-app/droidlogic-res/droidlogic-res.apk
--vendor/framework/droidlogic.jar
-system_ext/etc/permissions/droidlogic_permissions.xml
-system_ext/lib/libjniuevent.so
-vendor/etc/permissions/droidlogic.software.core.xml
-
-# DRM
-vendor/bin/oemcrypto_cas_test
-vendor/lib/libcasoemcrypto.so
-vendor/lib/libdec_ca_wvcas.so
-vendor/lib/libsecmem.so
-vendor/lib/mediacas/libwvmediacas.so
-
-# Dumpstate
--vendor/etc/vintf/manifest/android.hardware.dumpstate@1.1-service.droidlogic.xml
-vendor/bin/hw/android.hardware.dumpstate@1.1-service.droidlogic
-vendor/etc/init/android.hardware.dumpstate@1.1-service.droidlogic.rc
-
-# DVB
-vendor/lib/libam_adp.so
-
-# Graphics
-system_ext/lib/arm.graphics-V1-ndk_platform.so
-system_ext/lib/libamgralloc_ext.so
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
-vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
-vendor/etc/mesondisplay.cfg
-vendor/lib/arm.graphics-V1-ndk_platform.so
+# GLES
 vendor/lib/egl/libGLES_mali.so
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-arm.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+
+# Gralloc
+vendor/lib/hw/gralloc.odroidn2.so:vendor/lib/hw/gralloc.amlogic.so
 vendor/lib/libamgralloc_ext.so
 
-# HDMI CEC
-vendor/lib/hw/hdmi_cec.amlogic.so
+# Hardware Composer
+vendor/lib/hw/hwcomposer.odroidn2.so:vendor/lib/hw/hwcomposer.amlogic.so
+-vendor/lib/libge2d.so
 
-# Health
--vendor/etc/vintf/manifest/android.hardware.health@2.1-servcie.droidlogic.xml
-vendor/bin/hw/android.hardware.health@2.1-service.droidlogic
-vendor/etc/init/android.hardware.health@2.1-service.droidlogic.rc
-vendor/lib/hw/android.hardware.health@2.0-impl-2.1.droidlogic.so
+# HDMI-CEC
+vendor/bin/hdmicecd
+vendor/etc/init/hdmicecd.rc
+vendor/lib/hw/hdmi_cec.odroidn2.so
+vendor/lib/libhdmicec.so
+vendor/lib/libhdmicec_jni.so
+vendor/lib/libtvbinder.so
 
-# Kernel Modules
-vendor/lib/modules/amlogic_fbc_lib.ko
+# Interfaces (HIDL)
+lib/vendor.amlogic.hardware.droidvold@1.0.so
+lib/vendor.amlogic.hardware.droidvold@1.0.so:vendor/lib/vendor.amlogic.hardware.droidvold@1.0.so
+lib/vendor.amlogic.hardware.miracast_hdcp2@1.0.so
+lib/vendor.amlogic.hardware.miracast_hdcp2@1.0.so:vendor/lib/vendor.amlogic.hardware.miracast_hdcp2@1.0.so
+vendor/lib/vendor.amlogic.hardware.hdmicec@1.0.so
+vendor/lib/vendor.amlogic.hardware.remotecontrol@1.0.so
+vendor/lib/vendor.amlogic.hardware.screencontrol@1.0.so
+vendor/lib/vendor.amlogic.hardware.systemcontrol@1.0.so
+vendor/lib/vendor.amlogic.hardware.systemcontrol@1.1.so
+vendor/lib/vendor.amlogic.hardware.systemcontrol@1.0.so:lib/vendor.amlogic.hardware.systemcontrol@1.0.so
+vendor/lib/vendor.amlogic.hardware.systemcontrol@1.1.so:lib/vendor.amlogic.hardware.systemcontrol@1.1.so
+vendor/lib/vendor.amlogic.hardware.tvserver@1.0.so
 
-# ICU
-vendor/lib/libicuuc_vendor.so
-
-# Init-files
-vendor/etc/init/bluetooth.rc
-vendor/etc/init/dvb.rc
-vendor/etc/init/fs.rc
-vendor/etc/init/irblaster1.rc
-vendor/etc/init/power.rc
-vendor/etc/init/sysfs_permissions.rc
-
-# Keylayouts
-odm/usr/idc/Vendor_000d_Product_3838.idc
-odm/usr/idc/Vendor_000d_Product_3839.idc
-odm/usr/idc/Vendor_7545_Product_0021.idc
-odm/usr/keylayout/Vendor_000d_Product_3838.kl
-odm/usr/keylayout/Vendor_000d_Product_3839.kl
-odm/usr/keylayout/Vendor_7545_Product_0021.kl
-vendor/usr/keylayout/Generic.kl
-vendor/usr/keylayout/Vendor_0002_Product_0002.kl
-vendor/usr/keylayout/Vendor_000d_Product_3838.kl
-vendor/usr/keylayout/Vendor_000d_Product_3839.kl
-vendor/usr/keylayout/Vendor_005d_Product_0001.kl
-vendor/usr/keylayout/Vendor_0484_Product_5738.kl
-vendor/usr/keylayout/Vendor_0508_Product_0110.kl
-vendor/usr/keylayout/Vendor_0c45_Product_1109.kl
-vendor/usr/keylayout/Vendor_1915_Product_0001.kl
-vendor/usr/keylayout/Vendor_7045_Product_1820.kl
-vendor/usr/keylayout/Vendor_7545_Product_0021.kl
-vendor/usr/keylayout/Vendor_7545_Product_0180.kl
-vendor/usr/keylayout/Vendor_7545_Product_0190.kl
-
-# Media (Hardware)
-vendor/bin/DecInfo_test
-vendor/bin/esplayer
-vendor/lib/firmware/video/h264_enc.bin
-vendor/lib/firmware/video/video_ucode.bin
-vendor/lib/libamavutils.so
-
-# Media
-system_ext/lib/libmediahal_mediasync.system.so
-system_ext/lib/libmediahal_resman.system.so
-system_ext/lib/libmediahal_tsplayer.system.so
-system_ext/lib/libmediahal_videodec.system.so
-vendor/lib/libmediahal_mediasync.so
-vendor/lib/libmediahal_passthrough.so
-vendor/lib/libmediahal_resman.so
-vendor/lib/libmediahal_tsplayer.so
-vendor/lib/libmediahal_tunnelrenderer.so
-vendor/lib/libmediahal_videodec.so
+# Java
+vendor/framework/droidlogic.jar
+vendor/framework/droidlogic-tv.jar
+vendor/lib/libremotecontrol_jni.so
+vendor/lib/libsystemcontrol_jni.so
+vendor/lib/libsystemcontrol_jni.so:lib/libsystemcontrol_jni.so
+vendor/lib/libdisplaysetting.so
+vendor/etc/permissions/droidlogic.software.core.xml:product/etc/permissions/droidlogic.software.core.xml
+vendor/etc/permissions/droidlogic.tv.software.core.xml
+vendor/lib/libremotecontrolserver.so
+vendor/lib/libsystemcontrolclient.so:lib/libsystemcontrolclient.so
+vendor/lib/libsystemcontrolclient.so
 
 # Memtrack
-vendor/lib/hw/memtrack.amlogic.so
+vendor/lib/hw/memtrack.odroidn2.so:vendor/lib/hw/memtrack.amlogic.so
 
 # OMX
-odm/lib/libHwAudio_dcvdec.so
-odm/lib/libHwAudio_dtshd.so
-vendor/lib/libOmxAudio.so
-vendor/lib/libOmxBase.so
-vendor/lib/libOmxCore.so
-vendor/lib/libOmxVideo.so
 vendor/lib/libdatachunkqueue_alt.so
+#vendor/lib/libdolbyms12.so
+vendor/lib/libdra.so
 vendor/lib/libfpscalculator_alt.so
+vendor/lib/libHwAudio_dcvdec.so
+vendor/lib/libHwAudio_dtshd.so
+#vendor/lib/libms12dap.so
+vendor/lib/libOmxAudio.so
 vendor/lib/libomx_av_core_alt.so
 vendor/lib/libomx_clock_utils_alt.so
 vendor/lib/libomx_framework_alt.so
 vendor/lib/libomx_timed_task_queue_alt.so
 vendor/lib/libomx_worker_peer_alt.so
+vendor/lib/libOmxBase.so
+vendor/lib/libOmxCore.so
+vendor/lib/libOmxCoreSw.so
+vendor/lib/libOmxVideo.so
+vendor/lib/libstagefright_soft_amsoftdec.so
+#vendor/lib/libstagefright_soft_xaacdec.so
 vendor/lib/libstagefrighthw.so
 vendor/lib/libthreadworker_alt.so
 
+# OMX (Firmware)
+vendor/lib/firmware/video/h264_enc.bin
+vendor/lib/firmware/video/video_ucode.bin
+
 # Power
--vendor/etc/vintf/manifest/android.hardware.power-service.xml
-vendor/bin/hw/android.hardware.power.aidl-service.droidlogic
-vendor/etc/init/android.hardware.power-service.libperfmgr.rc
-vendor/etc/powerhint.json
-vendor/lib/libdisppower.so
-vendor/lib/libperfmgr.so
+vendor/lib/hw/power.odroidn2.so:vendor/lib/hw/power.amlogic.so
 
-# remotecfg
-vendor/bin/remotecfg
-vendor/etc/remote.cfg
-vendor/etc/remote.tab1
-vendor/etc/remote.tab2
-vendor/etc/remote.tab3
-
-# screen_source
-vendor/lib/hw/screen_source.amlogic.so
-
-# seccomp
+# Seccomp Policy
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/seccomp_policy/mediaextractor.policy
-vendor/etc/seccomp_policy/mediaswcodec.policy
 
-# System
-vendor/lib/libdroidaudiospdif.so
-vendor/lib/libge2d.so
-
-# systemcontrol
-odm/etc/firmware/firmware.le
-odm/etc/tvconfig/pq/pq.db
-odm/etc/tvconfig/pq/pq_default.ini
-system_ext/lib/vendor.amlogic.hardware.systemcontrol@1.0.so
-vendor/bin/hdcp_tx22
+# System Control
 vendor/bin/systemcontrol
 vendor/etc/init/systemcontrol.rc
-vendor/lib/libfbc.so
-vendor/lib/libpqcontrol.so
+vendor/etc/tvconfig/pq/pq.db
+vendor/etc/tvconfig/pq/pq_default.ini
 vendor/lib/libsystemcontrolservice.so
-vendor/lib/vendor.amlogic.hardware.droidvold@1.0.so
-vendor/lib/vendor.amlogic.hardware.systemcontrol@1.0.so
-vendor/lib/vendor.amlogic.hardware.systemcontrol@1.1.so
-vendor/lib/vendor.amlogic.hardware.tvserver@1.0.so
 
 # Thermal
--vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.droidlogic.xml
-vendor/bin/hw/android.hardware.thermal@2.0-service.droidlogic
-vendor/etc/init/android.hardware.thermal@2.0-service.droidlogic.rc
-vendor/etc/thermal_info_config.json
+vendor/lib/hw/thermal.odroidn2.so:vendor/lib/hw/thermal.amlogic.so
 
-# USB
--vendor/etc/vintf/manifest/android.hardware.usb.gadget@1.2-service.droidlogic.xml
-vendor/bin/hw/android.hardware.usb.gadget@1.2-service.droidlogic
-vendor/etc/init/android.hardware.usb.gadget@1.2-service.droidlogic.rc
-
-# Vulkan
-vendor/lib/hw/vulkan.amlogic.so
-
-# Widevine
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
+# Widevine DRM
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib/libwvhidl.so
 
 # Wi-Fi
-vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant.conf:vendor/etc/wifi/wpa_supplicant_overlay.conf
