@@ -114,7 +114,9 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 ## Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/amlogic/kernel-modules/media-pie \
+    hardware/amlogic/kernel-modules/optee-pie
 
 ## Thermal
 PRODUCT_PACKAGES += \
